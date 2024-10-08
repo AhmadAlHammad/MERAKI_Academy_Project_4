@@ -1,0 +1,58 @@
+.App {
+  display: grid;
+  grid-template-rows: 1fr  1fr 1fr ;
+  grid-template-columns: 1fr;
+}
+
+
+.Navbar{
+  position: relative;
+  background-color: aqua;
+ 
+  height: 50px;
+}
+
+.title{
+  position: relative;
+  margin-top: 13px;
+  text-align: start;
+  font-size: large;
+  
+}
+.form-control{
+  position: relative;
+  width: 350px;
+  margin-left: 350px;
+  margin-top: -37px;
+}
+
+.buttonSearch{
+  position: relative;
+  height: 37px;
+  width: 70px;
+  margin-left: 703px;
+  margin-top: -66px;
+}
+.btnbtn-primary{
+  height: 37px;
+  width: 70px;
+  margin-left: 703px;
+  margin-top: -66px; 
+}
+.Cart{
+  display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   margin-right: 80px;
+   margin-top: -50px;
+
+}
+.favoriteItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 27px;
+   margin-top: -23px;
+
+}
+
