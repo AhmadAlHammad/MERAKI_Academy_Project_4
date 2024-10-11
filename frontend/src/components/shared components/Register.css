@@ -1,43 +1,113 @@
+
+
 .regiterGroub{
- position:absolute;
- background:#f8f9fa;
+
+ background:#fff;
+ margin-top: 40px;
+ margin-left: 150px;
+ margin-right: 150px;
  padding: 20px;
  border-radius: 10px;
  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-top: 60px;
-    margin-left: 235px;
-  align-items: center;
-  justify-content: center;
+ height: 90vh;
+  
 }
 .inputfirstName{
-    position: relative;
-margin-top: 55px;
+    
+margin-left: -310px;
+margin-top:-148px;
 }
 .inputLastName{
-    position: relative;
-    margin-top: 55px;
+    margin-left: -310px;
+
+    margin-top: 45px;
     }
 
     .inputEmail{
-        position: relative;
-        margin-top: 55px;
+        margin-left: -310px;
+
+     
+        margin-top: 45px;
     }
     .inputMobilephone{
-        position: relative;
-        margin-top: 55px;
+        margin-left: -310px;
+
+        margin-top: 45px;
     }
     .inputpassword{
-        position: relative;
-        margin-top: 55px;
+        margin-left: -310px;
+
+        margin-top: 45px;
     }
     .inputCounry{
-        position: relative;
-        margin-top: 55px;
+
+        margin-left: -310px;
+
+        margin-top: 45px;
     }
-.successMsg {
-    color: green;
+    .buttonRegister{
+       
+        margin-top: 10px;
+        margin-left: 190px;
+    }
+
+    .title{
+ margin-left:180px;
+    font-size: 25px;
+
+        
+    }
+    .paraLogin{
+        display: inline-block;
+
+    font-size: 20px;
+    margin-left: -220px;
+       
+    }
+    .userIcon{
+        margin-bottom: -5px;
+
+        margin-right: 22px;
+    }
+    .userIcon2{
+        margin-bottom: -50px;
+
+        margin-right: 22px;
+    }
+    .emeilIcon{
+        margin-bottom: -100px;
+
+        margin-right: 22px;
+    }
+    .mobileIcon{
+        margin-bottom: -135px;
+        margin-right: 22px;
+    }
+    .passwordIcon{
+        margin-bottom: -170px;
+        margin-right: 22px;
+    }
+    .countryIcon{
+        margin-bottom: -220px;
+        margin-right: 22px;
+    }
+    .loginLink{
+    
+        margin-top: -150px;
+        margin-left: 20px; 
+    }
+    .login{
+           
+    margin-bottom: 190px;
+    margin-left: 230px; 
+    }
+.sucess{
+    background-color: greenyellow;
+    color: black;
+    margin-bottom: 100px;
 }
 
-.errorMsg {
-    color: red;
-}
+.failed {
+    background-color: maroon;
+    color: whitesmoke;
+ }
