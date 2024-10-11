@@ -1,0 +1,43 @@
+.regiterGroub{
+ position:absolute;
+ background:#f8f9fa;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    margin-left: 235px;
+  align-items: center;
+  justify-content: center;
+}
+.inputfirstName{
+    position: relative;
+margin-top: 55px;
+}
+.inputLastName{
+    position: relative;
+    margin-top: 55px;
+    }
+
+    .inputEmail{
+        position: relative;
+        margin-top: 55px;
+    }
+    .inputMobilephone{
+        position: relative;
+        margin-top: 55px;
+    }
+    .inputpassword{
+        position: relative;
+        margin-top: 55px;
+    }
+    .inputCounry{
+        position: relative;
+        margin-top: 55px;
+    }
+.successMsg {
+    color: green;
+}
+
+.errorMsg {
+    color: red;
+}
