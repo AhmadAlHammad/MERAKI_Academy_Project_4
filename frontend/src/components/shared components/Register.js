@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ButtonComponent from '../ButtonComponent';
 import axios from "axios";
 import './Register.css'
 import { Link } from 'react-router-dom';
@@ -47,18 +46,16 @@ const handelRegister = () =>{
             <p className='title'>SignUp</p>
 
         </div>
-    
+       
 
 <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="userIcon" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="user" viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
 </svg>
 </div>
 <div>
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="userIcon2" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
 </svg>
 </div>
 <div>
@@ -73,8 +70,8 @@ const handelRegister = () =>{
 </svg>
 </div>
 <div>
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="passwordIcon" viewBox="0 0 16 16">
-  <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="passicon" viewBox="0 0 16 16">
+  <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
 </svg>
 </div>
 <div>
@@ -126,11 +123,11 @@ setUserInfo({...userInfo , country:e.target.value})
 <div className='buttonRegister'>
 <button class="btn btn-primary" type="submit" onClick={handelRegister}>Submit</button>
 
-{msg && <h3 className={sucess ? "sucess" : "failed"}>{msg}!!</h3>}
+{msg && <p className={sucess ? "sucess" : "failed"}>{msg}!!</p>}
 </div>
 <div className='login'>
 <p className='paraLogin'>you have already account ?</p> 
-<Link to = {'/users/Login'} className='loginLink'>  Login  </Link> 
+<Link to="/users/Login" className="LoginLink">Login</Link>
 <Image/>
 </div>
 </div>

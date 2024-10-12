@@ -13,7 +13,7 @@
   
 }
 .inputfirstName{
-    
+    position: relative;
 margin-left: -310px;
 margin-top:-148px;
 }
@@ -64,10 +64,10 @@ margin-top:-148px;
     margin-left: -220px;
        
     }
-    .userIcon{
-        margin-bottom: -5px;
+    .user{
+         /* margin-top: 5px; */
 
-        margin-right: 22px;
+        /* margin-left: 5rem;  */
     }
     .userIcon2{
         margin-bottom: -50px;
@@ -83,7 +83,7 @@ margin-top:-148px;
         margin-bottom: -135px;
         margin-right: 22px;
     }
-    .passwordIcon{
+    .passicon{
         margin-bottom: -170px;
         margin-right: 22px;
     }
@@ -101,17 +101,13 @@ margin-top:-148px;
     margin-bottom: 190px;
     margin-left: 230px; 
     }
-   .registionoimage{
-
-margin-right: 450px;
-   }
+  
 .sucess{
-    background-color: greenyellow;
+    color: greenyellow;
     color: black;
     margin-bottom: 100px;
 }
 
 .failed {
-    background-color: maroon;
-    color: whitesmoke;
+    color: maroon;
  }

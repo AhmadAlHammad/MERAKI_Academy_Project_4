@@ -8,7 +8,6 @@
 .Navbar{
   position: relative;
   background-color: aqua;
- 
   height: 50px;
 }
 
@@ -17,34 +16,34 @@
   margin-top: 13px;
   text-align: start;
   font-size: large;
-  
 }
 .form-control{
   position: relative;
   width: 350px;
   margin-left: 350px;
-  margin-top: -37px;
+  margin-top: -2.6rem;
 }
 
 .buttonSearch{
   position: relative;
   height: 37px;
   width: 70px;
-  margin-left: 703px;
-  margin-top: -66px;
+  margin-left: 38rem;
+  margin-top: -4.3rem;
 }
 .btnbtn-primary{
+  position: relative;
   height: 37px;
   width: 70px;
   margin-left: 703px;
-  margin-top: -66px; 
+  margin-top: -69px; 
 }
 .Cart{
   display: flex;
    flex-direction: row;
    justify-content: flex-end;
    margin-right: 80px;
-   margin-top: -50px;
+   margin-top: -56px;
 
 }
 .favoriteItem{
@@ -55,4 +54,10 @@
    margin-top: -23px;
 
 }
+.HomeRegister{
+  position: relative;
+  margin-left: 57rem;
+  margin-top: 15rem;
 
+
+}

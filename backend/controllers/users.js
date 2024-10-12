@@ -29,7 +29,7 @@ const loginUser =  async (req,res)=>{
     const {email,password} = req.body;
    
     try {
-        const user = await userModel.findOne({email});
+        const user = await userModel.findOne({email}).populate("role", "-_id -__v");
         console.log("email",email);
         console.log("pass",password);
         
@@ -56,7 +56,7 @@ const loginUser =  async (req,res)=>{
             }
         }
         else{
-            res.status(401).json({success: false, message:"The email doesn’t exist or the password you’ve enter incorrect" });
+            res.status(401).json({success: false, message:"The email or password is Wrong" });
 
         }
         
@@ -70,4 +70,29 @@ const loginUser =  async (req,res)=>{
    
     
 }
-module.exports = {register,loginUser};
+
+const getuserById = (req, res) => {
+    const { id } = req.params;
+    employeeModel
+      .findById(id, "-__v")
+      .populate("role", "-__v -_id ")
+      .then((result) => {
+        if (!result) {
+          res.status(404).json({
+            status: false,
+            message: "user not found",
+          });
+        } else {
+          res.status(200).json({
+            success: true,
+            message: `The user with the id :${id}`,
+            employee: result,
+          });
+        }
+      })
+      .catch((error) => {
+        res.status(500).json({ sucess: false, message: error.message });
+      });
+  };
+  
+module.exports = {register,loginUser,getuserById};
