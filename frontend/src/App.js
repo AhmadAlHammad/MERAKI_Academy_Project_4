@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from './components/shared components/Navbar';
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 import Register from './components/shared components/Register';
-
+import Login from './components/shared components/Login'
 
 export const userContext = createContext();
 const App = () => {
@@ -20,6 +20,7 @@ return(
 <Routes>
   
 <Route path='/users/register' element={<Register/> }></Route>
+<Route path = '/users/Login' element = {<Login/>}></Route>
 </Routes>
 
 </userContext.Provider>

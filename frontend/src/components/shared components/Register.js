@@ -3,7 +3,7 @@ import ButtonComponent from '../ButtonComponent';
 import axios from "axios";
 import './Register.css'
 import { Link } from 'react-router-dom';
-
+import Image from '../Image'
 function Register() {
     
     const [firstName,setFirstName] = useState("");
@@ -16,7 +16,6 @@ const [sucess,setSucess] =useState(false);
 
 const [msg , setMsg] = useState("");
 const [userInfo , setUserInfo]=useState({});
-
 const handelRegister = () =>{
     axios.post("http://localhost:5000/users/register",userInfo).then((response)=>{
         console.log(userInfo);
@@ -46,7 +45,6 @@ const handelRegister = () =>{
         <div >
             
             <p className='title'>SignUp</p>
-            {/* <p className='paraLogin'>you have already account ?</p>  */}
 
         </div>
     
@@ -133,8 +131,7 @@ setUserInfo({...userInfo , country:e.target.value})
 <div className='login'>
 <p className='paraLogin'>you have already account ?</p> 
 <Link to = {'/users/Login'} className='loginLink'>  Login  </Link> 
-<div className='registionoimage'>
-<img url= "../registionoimage" alt="Registration" />
+<Image/>
 </div>
 </div>
 
@@ -144,7 +141,7 @@ setUserInfo({...userInfo , country:e.target.value})
 
 
 
-        </div>
+      
 
   )
 }
