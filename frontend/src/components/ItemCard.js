@@ -13,8 +13,9 @@ console.log(item);
             <p className='Brand'>Brand:{item.brand}</p>
             <p className='Price'>Price: {item.price}</p>
             <p className='Rate'>Rating: {item.rate}</p>
-            
-        </div>
+           
+            <button class="addToCartBtn" type="button">Add To Cart</button>    
+                </div>
     );
 };
 

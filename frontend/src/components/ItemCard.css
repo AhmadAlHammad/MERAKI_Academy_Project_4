@@ -5,7 +5,7 @@
     grid-template-columns: 1fr ;
     grid-template-rows:1fr ;
    column-gap: 20px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     width: 350px;
     border: 0.1px solid rgb(248, 242, 242);
     border-radius: 5px;
@@ -36,5 +36,6 @@ padding: 20px;
 .item-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    padding: 40px;
+    justify-content: space-evenly;
 }
