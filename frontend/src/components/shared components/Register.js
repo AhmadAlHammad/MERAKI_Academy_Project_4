@@ -26,7 +26,8 @@ const handelRegister = () =>{
         setMobilePhone(response.data.mobilePhone);
         setPassword(response.data.password);
         setCountry(response.data.country);
-        setMsg(response.data.msg);
+        setMsg(response.data.message);
+        
         setSucess(true);
     }).catch((err)=>{
         console.log(err);
@@ -131,14 +132,6 @@ setUserInfo({...userInfo , country:e.target.value})
 <Image/>
 </div>
 </div>
-
-
-
-
-
-
-
-      
 
   )
 }

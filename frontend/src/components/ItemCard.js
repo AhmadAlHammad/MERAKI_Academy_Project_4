@@ -1,12 +1,17 @@
 import React from 'react';
 import ItemList from './ItemList';
+import './ItemCard.css'
+
 const ItemCard = ({ item }) => {
+
+console.log(item);
+
     return (
         <div className="item-card">
-            <h3>{item.title}</h3>
+            <p>{item.title}</p>
             <img src={item.url} alt={item.title} />
-            <p>{item.brand}</p>
-            <p>Price: ${item.price}</p>
+            <p>Brand:{item.brand}</p>
+            <p>Price: {item.price}</p>
             <p>Rating: {item.rate}</p>
             
         </div>

@@ -70,29 +70,38 @@ margin-top:-148px;
         /* margin-left: 5rem;  */
     }
     .userIcon2{
-        margin-bottom: -50px;
+        position: relative;
+
+        margin-bottom: -60px;
 
         margin-right: 22px;
     }
     .emeilIcon{
-        margin-bottom: -100px;
+                position: relative;
+        margin-bottom: -130px;
 
         margin-right: 22px;
     }
     .mobileIcon{
-        margin-bottom: -135px;
+        position: relative;
+
+        margin-bottom: -195px;
         margin-right: 22px;
     }
     .passicon{
-        margin-bottom: -170px;
+        position: relative;
+
+        margin-bottom: -270px;
         margin-right: 22px;
     }
     .countryIcon{
-        margin-bottom: -220px;
+        position: relative;
+        margin-bottom: -340px;
         margin-right: 22px;
     }
     .loginLink{
-    
+        position: relative;
+
         margin-top: -150px;
         margin-left: 20px; 
     }

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1rem; 
+    margin-top: -1.5rem; 
     margin-left: -56rem;
 
 }
@@ -10,7 +10,7 @@
 .userIcon {
 
     margin-left: 1rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
 
 }
 
@@ -24,7 +24,7 @@
 }
 
 .passwordIcon {
-    margin-bottom: -3rem; 
+    margin-bottom: -5.1rem; 
     margin-left: 1rem;
 }
 

@@ -11,12 +11,16 @@ const ItemList = () => {
             try {
                 const response = await axios.get('http://localhost:5000/accessories/accessories');
                 const data = response.data; 
+                console.log("test");
                 
-                if (data.success) {
-                    setItems(data.data); 
+                console.log(response);
+                
+                if (response.data) {
+                    setItems(response.data.data); 
+
                 } else {
                     console.error("Failed to fetch items:", data.message);
-                    setError(data.message); 
+                    setError(response.data.message); 
                 }
             } catch (error) {
                 console.error("Error fetching items:", error);
@@ -25,16 +29,25 @@ const ItemList = () => {
         };
 
         fetchItems(); 
+        
     }, []);
 
    
- 
+   
     return (
         <div className="item-list">
+         
+
             {items.map((item) => (
-                <ItemCard key={item._id} item={item} />
+                
+<ItemCard key={item._id} item = {item} />
+
             ))}
+
+
         </div>
+
+     
     );
 };
 
