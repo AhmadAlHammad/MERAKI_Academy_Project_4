@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
-import ItemCard from './ItemCard'; 
-const ItemList = () => {
-    const [items, setItems] = useState([]);
+import ItemCardTab from './ItemCardTab'; 
+const itemListTab = () => {
+    const [itemsTap, setItemsTap] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setErrorTap] = useState(null);
 
     useEffect(() => {
-        const fetchItemsAcss = async () => {
+        const fetchItemsTab = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/accessories/accessories');
+                const response = await axios.get('http://localhost:5000/tablet/tabltes');
                 const data = response.data; 
                 console.log("test");
                 
                 console.log(response);
                 
                 if (response.data) {
-                    setItems(response.data.data); 
+                    setItemsTap(response.data.data); 
 
                 } else {
                     console.error("Failed to fetch items:", data.message);
-                    setError(response.data.message); 
+                    setErrorTap(response.data.message); 
                 }
             } catch (error) {
                 console.error("Error fetching items:", error);
-                setError("Failed to fetch items."); 
+                setErrorTap("Failed to fetch items."); 
             }
         };
 
-        fetchItemsAcss(); 
+        fetchItemsTab(); 
         
     }, []);
     
@@ -38,9 +38,9 @@ const ItemList = () => {
     <div className="item-list">
      
 
-        {items.map((item) => (
+        {itemsTap.map((itemTap) => (
             
-<ItemCard key={item._id} item = {item} />
+<ItemCardTab key={itemTap._id} itemTap = {itemTap} />
 
         ))}
 
@@ -50,6 +50,4 @@ const ItemList = () => {
  
 );
 };
-
-
-export default ItemList;
+export default itemListTab;

@@ -2,8 +2,8 @@
 .item-card {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows:1fr  1fr ;
+    grid-template-columns: 1fr ;
+    grid-template-rows:1fr ;
    column-gap: 20px;
     margin-top: 10px;
     width: 350px;
@@ -11,23 +11,24 @@
     border-radius: 5px;
     background-color: white;
     box-shadow:1px 5px rgb(248, 250, 250);
-padding: 4px;
+padding: 20px;
 }
 .item-card:hover{
     transform: translateY(-5px); 
 
 }
-.item-image {
-    width: 100%;
-    height: 250px;
+.img {
+    margin-bottom: 1rem;
+    width: 90%;
+    height: 200px;
     object-fit: cover; 
 }
 
-.item-title {
+.titleCard{
     font-size: 15px;
     margin-bottom: 10px;}
 
-.item-price {
+.Rate {
     color: green;
     font-weight: bold;
 }
