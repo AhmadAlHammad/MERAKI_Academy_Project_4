@@ -1,0 +1,28 @@
+.item-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    width: 200px;
+}
+
+.item-image {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.item-title {
+    font-size: 1.5em;
+}
+
+.item-price {
+    color: green;
+    font-weight: bold;
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

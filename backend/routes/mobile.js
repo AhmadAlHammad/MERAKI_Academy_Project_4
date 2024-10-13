@@ -2,8 +2,8 @@ const express = require('express');
 
 const mobileRouter = express.Router();
 
-const addmobile =require('../controllers/mobile');
+const {addmobile,getAllMobiles} =require('../controllers/mobile');
 
 mobileRouter.post('/',addmobile);
-
+mobileRouter.get('/mobiles',getAllMobiles);
 module.exports = mobileRouter;

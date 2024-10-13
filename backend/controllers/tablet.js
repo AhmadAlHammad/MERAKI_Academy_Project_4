@@ -16,5 +16,19 @@ const addtablet  = (req,res)=>{
     })
     
     }
+    const getAllTablets = (req, res) => {
+        tabletModel.find()
+            .then((response) => {
+               
+                res.status(200).json({ success: true, data: response });
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json({ success: false, message: "Error fetching tablets" });
+            });
+    };
     
-    module.exports = addtablet;
+    module.exports = {
+        addtablet,
+        getAllTablets,
+    };

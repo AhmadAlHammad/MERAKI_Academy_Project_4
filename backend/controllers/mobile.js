@@ -16,7 +16,21 @@ const addmobile  = (req,res)=>{
     })
     
     }
+    const getAllMobiles = (req, res) => {
+        mobileModel.find()
+            .then((response) => {
+                
+                res.status(200).json({ success: true, data: response });
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json({ success: false, message: "Error fetching mobiles" });
+            });
+    };
     
-    module.exports = addmobile;
+    module.exports = {
+        addmobile,
+        getAllMobiles,
+    };
     
 

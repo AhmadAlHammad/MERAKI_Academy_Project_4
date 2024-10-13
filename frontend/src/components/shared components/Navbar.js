@@ -4,6 +4,7 @@ import Cart from '../Cart';
 import Favorite from '../Favorite'
 import Login from './Login';
 import Register from './Register';
+import './Navbar.css'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (

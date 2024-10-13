@@ -35,6 +35,7 @@ app.use('/mobile',mobileRouter)
 app.use('/tablet',tabletRouter)
 //Tv router
 app.use('/tv',tvRouter)
+// app.use('/tvs',tvRouter)
 // app.use("*", (req, res) => res.status(404).json("NO content at this path"));
 
 app.listen(PORT, () => {
