@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemList from './ItemList';
 import './ItemCard.css'
 
 const ItemCard = ({ item }) => {
-
+const [dataCart,setdataCarts] = useState([])
 console.log(item);
 
     return (
@@ -14,7 +14,9 @@ console.log(item);
             <p className='Price'>Price: {item.price}</p>
             <p className='Rate'>Rating: {item.rate}</p>
            
-            <button class="addToCartBtn" type="button">Add To Cart</button>    
+            <button class="addToCartBtn" type="button" onClick={()=>{
+         
+            }}>Add To Cart</button>    
                 </div>
     );
 };

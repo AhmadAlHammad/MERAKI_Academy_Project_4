@@ -18,11 +18,11 @@ const roleRouter = require('./routes/role')
 const tvRouter =require('./routes/tv')
  const mobileRouter = require('./routes/mobile')
  const tabletRouter =require('./routes/tablet')
- const AllRouter = require("./routes/All")
+ const catigoryRouter = require("./routes/catigory")
 //user Router
 app.use('/users',registerRouter)
 
-app.use('/All',AllRouter)
+app.use('/product',catigoryRouter)
 //role Router
 app.use('/role' , roleRouter)
 //accessories router
