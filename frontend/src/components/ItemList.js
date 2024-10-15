@@ -16,7 +16,8 @@ const ItemList = () => {
         console.log(response);
 
         if (response.data) {
-          setItems(response.data.data);
+          console.log(response)
+          setItems(response.data.data.response);
         } else {
           console.error("Failed to fetch items:", data.message);
           setError(response.data.message);
@@ -29,11 +30,12 @@ const ItemList = () => {
 
     fetchItems();
   }, []);
-// console.log("items",items.laptops);
+console.log("items",items);
 
   return (
     <div className="item-list">
-      {items?.map((item) => {
+      
+      {items && items.map((item) => {
         console.log(item)
         
         return <ItemCard key={item._id} item={item} />;

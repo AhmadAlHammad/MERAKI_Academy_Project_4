@@ -1,5 +1,6 @@
 const express = require('express');
 const userModel = require('../models/userSchema');
+const cartModel= require("../models/cartSchema")
 const bcrypt = require("bcrypt");
 const jwt  =require('jsonwebtoken')
 
@@ -12,6 +13,14 @@ const register = (req,res )=>{
 
 
     user.save().then((response) =>{
+const newCart = new cartModel({userId:response._id}).then((response)=>{
+  res.status(200).json({sucsess: true, message: "created Cart", auther: response });
+}).catch((err) =>{
+        
+  console.log(err);
+  
+  res.status(500).json({ sucsess: false, message: "Cant create Cart" })
+})
         res.status(200).json({sucsess: true, message: "Account created", auther: response });
     }).catch((err) =>{
         
