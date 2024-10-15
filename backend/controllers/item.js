@@ -28,7 +28,7 @@ const catigory = (req, res) => {
             if (!reponse) {
               return res.status(404).json({
                 success: false,
-                message: `The article with id => ${id} not found`,
+                message: `The item with id => ${id} not found`,
               });
             }
             res.status(200).json({
@@ -48,9 +48,9 @@ const catigory = (req, res) => {
           });
       };
 const addProduct = (req, res) => {
-  const { title,id,brand, price, rating, Url } = req.body;
+  const { title,type,brand, price, rating, Url } = req.body;
 
-  const newProduct = new itemModel({title, id ,brand, price, rating, Url  });
+  const newProduct = new itemModel({title ,type,brand, price, rating, Url  });
  
 
 

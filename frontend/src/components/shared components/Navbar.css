@@ -1,7 +1,9 @@
 
 .Navbar{
   position: relative;
-  background-color: aqua;
+  background-color:antiquewhite;
+  
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   height: 50px;
 }
 
@@ -62,4 +64,73 @@
     margin-top: -2rem;
 }
   
-   
+.CatigoryBar {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2px auto;
+  display: flex;  
+  justify-content: space-around;  
+  align-items: center;  
+  flex-wrap: wrap;  
+}
+
+
+.CatigoryBar p {
+
+  font-size: 18px;
+  color: #333;
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 1; 
+  text-align: center;  
+  min-width: 120px;  
+  max-width: 150px;  
+}
+
+.CatigoryBar p:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.Laptop {
+  color: #1e88e5;
+  border-left: 4px solid #1e88e5;
+}
+
+.Tvs {
+  color: #43a047;
+  border-left: 4px solid #43a047;
+}
+
+.Tablets {
+  color: #ff5722;
+  border-left: 4px solid #ff5722;
+}
+
+.Mobile {
+  color: #fdd835;
+  border-left: 4px solid #fdd835;
+}
+
+.accessories {
+  color: #8e24aa;
+  border-left: 4px solid #8e24aa;
+}
+
+@media (max-width: 600px) {
+  .CatigoryBar {
+    flex-direction: column; 
+  }
+
+  .CatigoryBar p {
+    font-size: 16px;
+    padding: 8px 12px;
+    max-width: 10%;
+  }
+}
