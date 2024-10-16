@@ -1,27 +1,42 @@
-import React, { useState } from 'react';
-import ItemList from './ItemList';
+import React from 'react';
+import axios from 'axios';
 import './ItemCard.css'
-
 const ItemCard = ({ item }) => {
-const [dataCart,setdataCarts] = useState([])
+  const handleAddToCart = async () => {
+    const userId = localStorage.getItem("UID"); 
 
-    return (
-        <div className="item-card">
-            <p className='titleCard'>{item.title}</p>
-            <img src={item.Url} className='img' />
-            <p className='Brand'>Brand:{item.brand}</p>
-            <p className='Price'>Price: {item.price}</p>
-            <p className='Rate'>Rating: {item.rating}</p>
-            <p className='type'>Type: {item.type} </p>
+    if (!userId) {
+      alert('Please log in to add items to the cart!'); 
+      return;
+    }
 
-            <button class="addToCartBtn" type="button" onClick={(
+    try {
+     
+      const response = await axios.post(`http://localhost:5000/product/${userId}`, {
+        productId: item._id,  
+      });
+      console.log('Item added to cart:', response.data);
+      alert('Item successfully added to cart!'); 
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      alert('Cant add item to Cart Please Login .'); 
+    }
+  };
 
-            )=>{
-         
-            }}>Add To Cart</button>    
-                </div>
-    );
-    
+  return (
+    <div className="item-card">
+      <p className='titleCard'>{item.title}</p>
+      <img src={item.Url} className='img' alt={item.title} />
+      <p className='Brand'>Brand: {item.brand}</p>
+      <p className='Price'>Price: ${item.price}</p>
+      <p className='Rate'>Rating: {item.rating}</p>
+      <p className='type'>Type: {item.type}</p>
+
+      <button className="addToCartBtn" type="button" onClick={handleAddToCart}>
+        Add To Cart
+      </button>
+    </div>
+  );
 };
 
 export default ItemCard;
