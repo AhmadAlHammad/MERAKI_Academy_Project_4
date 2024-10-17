@@ -70,7 +70,7 @@ const loginUser = async (req, res) => {
 
       if (passIseq) {
         const payload = {
-          user_Id: user.user_id,
+          user_Id: user._id,
           country: "jordan",
           role: "ADMIN",
           permissions: ["AddTocart"],
@@ -81,7 +81,7 @@ const loginUser = async (req, res) => {
         const token = jwt.sign(payload, SECRET, options);
         res
           .status(200)
-          .json({ success: true, message: "Login Successfully", token: token });
+          .json({ success: true, message: "Login Successfully", token: token ,userId:user._id});
       }
     } else {
       res

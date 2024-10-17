@@ -2,9 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import './ItemCard.css'
 const ItemCard = ({ item }) => {
-  const handleAddToCart = async () => {
+  const handleAddToCart = async (id) => {
     const userId = localStorage.getItem("UID"); 
-   const token =  localStorage.getItem("token");
+   const token =  localStorage.getItem("Token");
+console.log(userId);
 
 
     if (!userId) {
@@ -14,17 +15,15 @@ const ItemCard = ({ item }) => {
 
     try {
      
-      const response = await axios.post(`http://localhost:5000/cart/Add`, { items: item._id, userId: userId },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, 
-          },
-        }
+      const response = await axios.put(`http://localhost:5000/cart/Add/${id}`,{userId}
+      
       )
-      console.log('Item added to cart:', response.data);
-      alert('Item successfully added to cart!'); 
+      console.log('Item added to cart:', response);
+      // alert('Item successfully added to cart!'); 
     } catch (error) {
-      console.error('Error adding item to cart:', error);
+      // console.error('Error adding item to cart:', error);
+      console.log(error);
+      
       alert('Cant add item to Cart Please Login .'); 
     }
   };
@@ -38,7 +37,11 @@ const ItemCard = ({ item }) => {
       <p className='Rate'>Rating: {item.rating}</p>
       <p className='type'>Type: {item.type}</p>
 
-      <button className="addToCartBtn" type="button" onClick={handleAddToCart}>
+      <button className="addToCartBtn" type="button" id={item._id} onClick={(e)=>{
+        console.log(e.target.id);
+        
+        handleAddToCart(e.target.id)
+      }}>
         Add To Cart
       </button>
     </div>
