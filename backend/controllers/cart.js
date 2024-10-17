@@ -26,10 +26,11 @@ console.log(userId);
 
 const gitAllItem = async (req, res) => {
     try {
-        const userId = req.body.userId; 
-console.log(userId);
+        const userId = req.params.userId; 
+        console.log("User ID:", userId);
 
-        const result = await cartModel.findOne({ userId }).populate('items'); 
+        const result = await cartModel.findOne({ userId: userId }).populate('items').exec(); 
+
         if (!result) {
             return res.status(404).json({ message: "Cart not found" });
         }
@@ -40,4 +41,5 @@ console.log(userId);
         res.status(500).json({ message: "Error retrieving cart items" });
     }
 };
-module.exports = { addToCart,gitAllItem };
+
+module.exports = { addToCart, gitAllItem };
