@@ -4,6 +4,8 @@ import './ItemCard.css'
 const ItemCard = ({ item }) => {
   const handleAddToCart = async () => {
     const userId = localStorage.getItem("UID"); 
+   const token =  localStorage.getItem("token");
+
 
     if (!userId) {
       alert('Please log in to add items to the cart!'); 
@@ -12,9 +14,13 @@ const ItemCard = ({ item }) => {
 
     try {
      
-      const response = await axios.post(`http://localhost:5000/product/${userId}`, {
-        productId: item._id,  
-      });
+      const response = await axios.post(`http://localhost:5000/cart/Add`, { items: item._id, userId: userId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        }
+      )
       console.log('Item added to cart:', response.data);
       alert('Item successfully added to cart!'); 
     } catch (error) {
@@ -28,7 +34,7 @@ const ItemCard = ({ item }) => {
       <p className='titleCard'>{item.title}</p>
       <img src={item.Url} className='img' alt={item.title} />
       <p className='Brand'>Brand: {item.brand}</p>
-      <p className='Price'>Price: ${item.price}</p>
+      <p className='Price'>Price: {item.price}</p>
       <p className='Rate'>Rating: {item.rating}</p>
       <p className='type'>Type: {item.type}</p>
 
@@ -36,7 +42,9 @@ const ItemCard = ({ item }) => {
         Add To Cart
       </button>
     </div>
+ 
   );
+ 
 };
 
 export default ItemCard;

@@ -19,14 +19,16 @@ const tvRouter =require('./routes/tv')
  const mobileRouter = require('./routes/mobile')
  const tabletRouter =require('./routes/tablet')
  const itemRouter = require("./routes/item")
+ const cartRouter = require('./routes/cart')
 //user Router
 app.use('/users',registerRouter)
-
+//
+app.use('/cart',cartRouter)
 app.use('/product',itemRouter)
 //role Router
 app.use('/role' , roleRouter)
 //accessories router
-app.use('/accessories',accessoriesRouter)
+// app.use('/accessories',accessoriesRouter)
 //laptop router
 app.use('/laptop',laptopRouter)
 //mobile router
