@@ -5,10 +5,11 @@ const cartModel = require("../models/cartSchema");
 const addToCart = async (req, res) => {
     try {
         const userId = req.body.userId;
-        console.log(req.token);
+        // console.log(req.token);
 
-        const { items } = req.params;
-console.log(userId);
+        const { items } = req.body.items;
+console.log("userId",userId);
+console.log(items);
 
         const updatedCart = await cartModel.findOneAndUpdate(
 
@@ -24,22 +25,45 @@ console.log(userId);
     }
 };
 
+// const addToCart = (req, res) => {
+//   const { user_Id } = req.token;
+//   const { items } = req.params;
+//   const { cart_Id } = req.body;
+
+//   cartModel
+//     .findOne({ userId: user_Id })
+//     .then((result) => {
+//       cartModel
+//         .findByIdAndUpdate(cart_Id, { $push: { items } }, { new: true })
+//         .then((resp) => {
+//           console.log(resp);
+//           res.status(200).json(resp);
+//         })
+//         .catch((err) => {
+//           console.log(err);
+//         });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
+
 const gitAllItem = async (req, res) => {
     try {
-        const userId = req.params.userId; 
+        const userId = req.body.userId; 
         console.log("User ID:", userId);
 
-        const result = await cartModel.findOne({ userId: userId }).populate('items').exec(); 
+        const result = await cartModel.findOne({ userId }).populate('items').exec();
 
         if (!result) {
             return res.status(404).json({ message: "Cart not found" });
         }
 
         res.status(200).json(result);
+        
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Error retrieving cart items" });
     }
 };
-
-module.exports = { addToCart, gitAllItem };
+module.exports = { addToCart ,gitAllItem};

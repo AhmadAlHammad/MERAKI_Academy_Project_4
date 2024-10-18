@@ -22,7 +22,7 @@ return(
 
 <Routes>
   <Route path='/Home' element = {<Home/>}></Route>
-  <Route path='/CArrt' element = {<Cart/>}></Route>
+  <Route path='/Cart' element = {<Cart/>}></Route>
 
 <Route path='/users/register' element={<Register/> }></Route>
 <Route path ='/users/Login' element = {<Login/>}></Route>

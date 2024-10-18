@@ -9,5 +9,5 @@ const {addToCart,gitAllItem} =require('../controllers/cart');
 const authentication = require('../middleware/authentication');
 
 cartRouter.put('/Add/:items',addToCart);
-cartRouter.get('/git/:id',gitAllItem);
+cartRouter.get('/git/',gitAllItem);
 module.exports = cartRouter;

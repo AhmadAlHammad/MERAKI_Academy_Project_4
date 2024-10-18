@@ -21,7 +21,7 @@ console.log(userId);
       console.log('Item added to cart:', response);
       // alert('Item successfully added to cart!'); 
     } catch (error) {
-      // console.error('Error adding item to cart:', error);
+      console.error('Error adding item to cart:', error);
       console.log(error);
       
       alert('Cant add item to Cart Please Login .'); 
