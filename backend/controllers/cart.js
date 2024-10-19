@@ -5,17 +5,15 @@ const cartModel = require("../models/cartSchema");
 const addToCart = async (req, res) => {
     try {
         const userId = req.body.userId;
-        // console.log(req.token);
+        const items = req.body.items; 
 
-        const { items } = req.body.items;
-console.log("userId",userId);
-console.log(items);
+        console.log("User ID:", userId);
+        console.log("Items:", items);
 
         const updatedCart = await cartModel.findOneAndUpdate(
-
-            { userId : userId},
+            { userId: userId },
             { $push: { items: items } },
-            { new: true }
+            { new: true, upsert: true } 
         );
 
         res.status(200).json(updatedCart);
@@ -50,8 +48,9 @@ console.log(items);
 
 const gitAllItem = async (req, res) => {
     try {
-        const userId = req.body.userId; 
-        console.log("User ID:", userId);
+        const userId = req.params.userId;
+        
+        console.log("User ID fixed:", userId);
 
         const result = await cartModel.findOne({ userId }).populate('items').exec();
 

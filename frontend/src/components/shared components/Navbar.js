@@ -18,6 +18,7 @@ const Navbar = () => {
 
 
 <ButtonComponent/>
+
 <Cart/>
 <Favorite/>
 
