@@ -6,8 +6,8 @@ import axios from "axios";
 const Home = () => {
   const [laptop, setLaptop] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [errorlaptop, setErrorLaptop] = useState(null);
-
+  const [errorLaptop, setErrorLaptop] = useState(null);
+  
   const fetchLaptopData = async () => {
     try {
       const response = await axios.get("http://localhost:5000/laptop/laptops");
@@ -20,18 +20,20 @@ const Home = () => {
     } catch (error) {
       console.error("Error fetching items:", error);
       setErrorLaptop("Failed to fetch items.");
-    } 
+    }
   };
-
-
-
- 
+  
+  const handleParagraphClick = () => {
+    setLoading(true);
+    fetchLaptopData();
+  };
+  
 
   return (
     <div>
       <Navbar />
       <div className='CatigoryBar'>
-        <p className='Laptop' onClick={fetchLaptopData}>Laptop</p>
+        <p className='Laptop' onClick={handleParagraphClick}>Laptop</p>
         <p className='Tvs'>Tvs</p>
         <p className='Tablets'>Tablets</p>
         <p className='Mobile'>Mobile</p>

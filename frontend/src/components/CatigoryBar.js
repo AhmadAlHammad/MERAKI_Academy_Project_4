@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import './ItemCard.css'
+// import React, { useState } from 'react';
 
-const CatigoryBar = ({ item }) => {
-console.log(item);
+// import './ItemCard.css'
 
-    return (
-        <div className="catigoryBar">
-            <p className='catigoryBarType'>{item.type}</p>
-                </div>
-    );
-};
+// const CatigoryBar = ({ item }) => {
+// console.log(item);
 
-export default CatigoryBar;
+//     return (
+//         <div className="catigoryBar">
+//             <p className='catigoryBarType'>{item.type}</p>
+//                 </div>
+//     );
+// };
+
+// export default CatigoryBar;

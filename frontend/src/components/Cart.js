@@ -2,52 +2,52 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Cart.css'; 
+import Navbar  from './shared components/Navbar';
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [status, setStatus] = useState(false);
+
     const navigate = useNavigate();
+
 
     const fetchCartItems = async () => {
         try {
-            const userId = localStorage.getItem('UID');
+            const userId = localStorage.getItem('UID'); 
             console.log(userId);
             
             const response = await axios.get(`http://localhost:5000/cart/git/${userId}`);
-            setCartItems(response.data.items); 
+            setCartItems(response.data.items);
             console.log(response.data.items);
         } catch (error) {
             console.error("Error fetching cart items:", error);
         }
+        setStatus(false);
+        
     };
 
-    const handleClick = () => {
+
+    useEffect(() => {
         fetchCartItems();
-        navigate('/Cart'); 
-    };
-
+    }, [status]); 
+    
     return (
         <div className='Cart'>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="currentColor"
-                className="bi bi-cart"
-                viewBox="0 0 16 16"
-                onClick={handleClick}
-            >
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-            </svg>
-
+<Navbar/>
             <div className="cart-items">
-                
-                    {cartItems.map(item => (
-                        <div className="cart-item" key={item._id}>
-                            <h1>{item.title}</h1>
-                            <p>Price: ${item.price}</p>
+                {cartItems.length > 0 ? (
+                    cartItems.map(item => (
+                        <div className="cart-item" >
+                           <p className="titleCart">{item.title}</p>
+      <img src={item.Url} className="imgCart" alt={item.title} />
+      <p className="BrandCart">Brand: {item.brand}</p>
+      <p className="PriceCart">Price: {item.price}</p>
+      <p className="RateCart">Rating: {item.rating}</p>
+      <p className="typeCart">Type: {item.type}</p>
                         </div>
-                    )
-                
+                    ))
+                ) : (
+                    <p>No items in the cart</p>
                 )}
             </div>
         </div>

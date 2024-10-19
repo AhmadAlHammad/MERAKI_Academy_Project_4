@@ -1,6 +1,8 @@
 const express = require("express");
 
 const cartModel = require("../models/cartSchema");
+const mongoose = require('mongoose');
+
 
 const addToCart = async (req, res) => {
     try {
@@ -23,29 +25,33 @@ const addToCart = async (req, res) => {
     }
 };
 
-// const addToCart = (req, res) => {
-//   const { user_Id } = req.token;
-//   const { items } = req.params;
-//   const { cart_Id } = req.body;
 
-//   cartModel
-//     .findOne({ userId: user_Id })
-//     .then((result) => {
-//       cartModel
-//         .findByIdAndUpdate(cart_Id, { $push: { items } }, { new: true })
-//         .then((resp) => {
-//           console.log(resp);
-//           res.status(200).json(resp);
-//         })
-//         .catch((err) => {
-//           console.log(err);
-//         });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-
+const deleteItemFromCart = async (req, res) => {
+    try {
+      const itemId = req.params.id; 
+  
+      if (!mongoose.Types.ObjectId.isValid(itemId)) {
+        return res.status(400).json({ error: 'Invalid item ID format' });
+      }
+  
+      console.log('Attempting to delete item with ID:', itemId);
+  
+      
+      const cart = await cartModel.findOneAndDelete({
+        items: itemId 
+      });
+  
+      
+      if (!cart) {
+        return res.status(404).json({ error: 'Cart not found or item not in cart' });
+      }
+  
+      res.status(200).json({ message: 'Item deleted successfully' });
+    } catch (error) {
+      console.log('Error during deletion:', error);
+      res.status(500).json({ error: 'Failed to delete item' });
+    }
+  };
 const gitAllItem = async (req, res) => {
     try {
         const userId = req.params.userId;
@@ -61,8 +67,9 @@ const gitAllItem = async (req, res) => {
         res.status(200).json(result);
         
     } catch (err) {
+
         console.error(err);
         res.status(500).json({ message: "Error retrieving cart items" });
     }
 };
-module.exports = { addToCart ,gitAllItem};
+module.exports = { addToCart ,gitAllItem,deleteItemFromCart};
