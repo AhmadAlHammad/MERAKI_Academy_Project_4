@@ -30,16 +30,14 @@ const deleteItemFromCart = async (req, res) => {
     try {
       const itemId = req.params.id; 
   
-      if (!mongoose.Types.ObjectId.isValid(itemId)) {
-        return res.status(400).json({ error: 'Invalid item ID format' });
-      }
+    //   if (!mongoose.Types.ObjectId.isValid(itemId)) {
+    //     return res.status(400).json({ error: 'Invalid item ID format' });
+    //   }
   
       console.log('Attempting to delete item with ID:', itemId);
   
       
-      const cart = await cartModel.findOneAndDelete({
-        items: itemId 
-      });
+      const cart = await cartModel.findOneAndDelete( itemId );
   
       
       if (!cart) {

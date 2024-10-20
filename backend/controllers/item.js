@@ -52,8 +52,6 @@ const addProduct = (req, res) => {
 
   const newProduct = new itemModel({title ,type,brand, price, rating, Url  });
  
-
-
   newProduct
     .save()
     .then((product) => {
@@ -69,5 +67,22 @@ const addProduct = (req, res) => {
       res.status(500).json({ success: false, message: "Error saving product" });
     });
 };
+const search = async (req, res) => {
+  const user = req.query.brand;
 
-module.exports = { catigory, addProduct ,getCatigoryById};
+  const found = itemModel.find((element) => {
+    return element.brand === user;
+  });
+
+  if (found) {
+    // set the response status code to 200 (OK)
+    // sends back a response of the found user
+    res.status(200);
+    res.json(found);
+  } else {
+    // set the response status code to 404 (Not Found)
+    res.status(404);
+    res.json("User not found");
+  }
+};
+module.exports = { catigory, addProduct ,getCatigoryById,search};

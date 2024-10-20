@@ -47,3 +47,30 @@
   color: #777;
   margin-top: 5px;
 }
+.deletebutton{
+      background-color: #007bff; 
+    color: #ffffff; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 1rem; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    width: 100%; 
+    margin-top: 10px; 
+}
+
+.backBtn{
+  position: relative;
+  background-color: #007bff; 
+  margin-bottom: 15px;
+  color: #ffffff; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1rem; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  width: 10%; 
+  margin-top: 10px; 
+}

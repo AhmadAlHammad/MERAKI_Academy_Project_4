@@ -6,6 +6,7 @@ import Register from './components/shared components/Register';
 import Login from './components/shared components/Login';
 import Home from './Home';
 import Cart from './components/Cart'
+import Create from './components/Create';
 export const userContext = createContext();
 const App = () => {
   const [Token,setToken]=useState(localStorage.getItem('Token'))
@@ -28,6 +29,8 @@ return(
 
 <Route path='/users/register' element={<Register/> }></Route>
 <Route path ='/users/Login' element = {<Login/>}></Route>
+<Route path ='/create' element = {<Create/>}></Route>
+
 </Routes>
 
 </userContext.Provider>

@@ -106,7 +106,7 @@ margin-top:-148px;
         margin-left: 20px; 
     }
     .login{
-           
+    position: absolute;
     margin-bottom: 190px;
     margin-left: 230px; 
     }
@@ -120,3 +120,10 @@ margin-top:-148px;
 .failed {
     color: maroon;
  }
+ .imageRegister{
+    position: absolute;
+    height: 550px;
+    width: 550px;
+    margin-left: 240px;
+    margin-top: -400px;
+}
